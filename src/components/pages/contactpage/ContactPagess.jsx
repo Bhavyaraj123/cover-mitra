@@ -24,7 +24,7 @@ const ContactPagess = () => {
 
     // 1. Send to your backend API
     try {
-      const res = await fetch(`http://localhost:4000/api/v1/user`, {
+      const res = await fetch(`https://cover-mitra-backend.vercel.app/api/v1/user`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

@@ -9,19 +9,19 @@ const Footer = () => {
 
   useEffect(() => {
     // Fetch Insurance
-    fetch('http://localhost:4000/api/v1/insurance/allInsurance')
+    fetch('https://cover-mitra-backend.vercel.app/api/v1/insurance/allInsurance')
       .then(res => res.json())
       .then(data => setInsuranceData(data.data))
       .catch(err => console.log('Insurance API Error:', err));
 
     // Fetch SIP
-    fetch('http://localhost:4000/api/v1/sip/getallsip')
+    fetch('https://cover-mitra-backend.vercel.app/api/v1/sip/getallsip')
       .then(res => res.json())
       .then(data => setSipData(data.data))
       .catch(err => console.log('SIP API Error:', err));
 
     // Fetch Loan
-    fetch('http://localhost:4000/api/v1/finance/getalloan')
+    fetch('https://cover-mitra-backend.vercel.app/api/v1/finance/getalloan')
       .then(res => res.json())
       .then(data => setLoanData(data.data))
       .catch(err => console.log('Loan API Error:', err));

@@ -9,7 +9,6 @@ import { BASE_URL } from "../../utils/config";
 import useFetch from "../../../hooks/UseFetch";
 
 const Insurance = () => {
-  // Fetch the data first, before any early returns
   const { data, loader, error } = useFetch(
     `${BASE_URL}/api/v1/insurance/allInsurance`
   );
@@ -18,11 +17,9 @@ const Insurance = () => {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
-  // Now perform the conditional rendering after the hooks are called
   if (loader) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
-  // Insurance points array this is for points
   const insurancePoints = [
     {
       icon: safety,
@@ -43,7 +40,7 @@ const Insurance = () => {
   ];
 
   return (
-    <div className="py-20 bg-gray-50 md:px-20 px-6 w-full">
+    <div className="py-20 bg-gray-50 md:px-20 px-6 w-full overflow-x-hidden">
       <div className="flex flex-col items-center md:flex-row md:justify-between gap-10">
         {/* Left Text Section */}
         <div className="md:w-1/2 space-y-6" data-aos="fade-right">
@@ -58,12 +55,12 @@ const Insurance = () => {
                 className="flex items-center gap-3"
                 key={index}
                 data-aos="fade-up"
-                data-aos-delay={index * 150} // increasing delay for each point
+                data-aos-delay={index * 150}
               >
                 <img
                   src={point.icon}
                   alt={`Point ${index + 1}`}
-                  className="h-10"
+                  className="h-10 w-10 object-contain"
                 />
                 <p className="capitalize text-[#8F87F1] font-medium text-lg">
                   {point.text}
@@ -74,19 +71,18 @@ const Insurance = () => {
         </div>
 
         {/* Right Cards Section */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full md:w-1/2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full md:w-1/2">
           {data.map((item, index) => (
             <Link to={`/policy/${item._id}`} key={index}>
               <div
                 className="bg-white rounded-md shadow-md p-4 flex flex-col items-center text-center transition hover:shadow-lg hover:scale-105 duration-300 cursor-pointer"
-                key={index}
                 data-aos="zoom-in-up"
                 data-aos-delay={index * 100}
               >
                 <img
                   src={`${BASE_URL}/uploads/${item.image}`}
                   alt={item.name}
-                  className="h-20 mb-4"
+                  className="h-20 mb-4 max-w-full object-contain"
                   loading="lazy"
                 />
                 <h3 className="text-lg font-semibold text-gray-700">

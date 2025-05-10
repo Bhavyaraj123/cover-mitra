@@ -16,7 +16,7 @@ const Home = () => {
     <Insurance/>
     <FinancialServices/>
     <Step_policy/>
-    
+  
     <MarqueePage/>
     <SipCards/>
     <Choose/>

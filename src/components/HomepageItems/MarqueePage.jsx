@@ -18,39 +18,39 @@ const MarqueePage = () => {
   }, []);
 
   return (
-    <>
-      <div className="py-10 md:px-20 md:py-20 px-5">
-        <h2
-          data-aos="fade-up"
-          className="text-3xl md:text-4xl font-semibold text-center text-gray-800 mb-2"
-        >
-          Our Trusted Partners
-        </h2>
+    <div className="py-10 md:py-20 px-5 md:px-20 overflow-x-hidden">
+      <h2
+        data-aos="fade-up"
+        className="text-3xl md:text-4xl font-semibold text-center text-gray-800 mb-2"
+      >
+        Our Trusted Partners
+      </h2>
 
-        <p
-          data-aos="fade-up"
-          data-aos-delay="200"
-          className='md:text-xl text-lg font-semibold text-center text-gray-500 mt-2 mb-10'
-        >
-          We are proud to announce our partnership with India's Leading insurance companies.
-        </p>
+      <p
+        data-aos="fade-up"
+        data-aos-delay="200"
+        className="md:text-xl text-lg font-semibold text-center text-gray-500 mt-2 mb-10"
+      >
+        We are proud to announce our partnership with India's Leading insurance companies.
+      </p>
 
-        <Marquee speed={100} gradient={true} gradientWidth={50}>
-          {[img1, img2, axis, icic, hdfc,iffco,chola,aditya].map((img, index) => (
+      <div className="w-full overflow-x-hidden">
+        <Marquee speed={100} gradient={false} className="w-full">
+          {[img1, img2, axis, icic, hdfc, iffco, chola, aditya].map((img, index) => (
             <div
               key={index}
-              className="mx-6 flex items-center justify-center min-w-[140px] bg-gray-100 p-4 border border-blue-300 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+              className="mx-4 flex items-center justify-center min-w-[120px] bg-gray-100 p-3 border border-blue-200 rounded-xl shadow-sm hover:shadow-md transition duration-300"
             >
               <img
                 src={img}
                 alt={`Partner ${index + 1}`}
-                className="h-16 w-36 object-contain hover:scale-105 transition-transform duration-300 ease-in-out"
+                className="h-14 w-32 object-contain hover:scale-105 transition-transform duration-300"
               />
             </div>
           ))}
         </Marquee>
       </div>
-    </>
+    </div>
   )
 }
 

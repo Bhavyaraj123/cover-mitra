@@ -15,7 +15,7 @@ import AboutUs from '../AboutUs/AboutUs.jsx';
 const Routers = () => {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/home" />} />
+      <Route path="/" element={<Home/>} />
       <Route path="/home" element={<Home />} />
       <Route path="/policy/:id" element={<Policy/>} />
       <Route path='/insurancepage' element={<InsurancePage/>}/>
